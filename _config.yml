@@ -154,6 +154,4 @@ avatar: /images/avatar.png
 
 duoshuo_shortname: luoluolet
 
-search:
-  path: search.xml
-  field: post
+
