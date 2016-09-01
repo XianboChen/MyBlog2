@@ -1,0 +1,73 @@
+---
+title: about
+date: 2016-08-20 16:58:59
+---
+### 欢迎来到陈贤波的个人博客！
+
+</br>
+## 搭建介绍
+
+本博客系统是利用hexo与github搭建而成，网上有很多总结的很少的搭建教程，就不在此赘述，感兴趣的话可以自行百度相关关键字即可，这里只介绍几个搭建时候我说遇到的问题，希望可以给大家一点帮助。
+
+
+### SSH
+本地生成SSH并将id_rsa.pub添加到github后，连接服务器却报：
+
+Agent admitted failure to sign using the key
+
+错误。出现这种情况可能所由于本地未刷新，执行命令：
+
+``` bash
+$ ssh-add
+```
+即可。
+
+
+### 安装node.js
+由于网络的原因，网上给出的很对node.js资源连接不上，这里给出一个下载相对比较快的资源，依次执行命令：
+``` bash
+$ sudo add-apt-repository ppa:chris-lea/node.js
+$ sudo apt-get update
+$ sudo apt-get install nodejs
+```
+
+### 安装hexo
+安装hexo以官方介绍为准，部分博客给出的命令可能是因为hexo版本不同的问题产生异常的错误
+
+#### Installation
+```
+$ npm install hexo-cli -g
+```
+#### Quick Start
+
+##### Setup your blog
+```
+$ hexo init blog
+$ cd blog
+```
+##### Start the server
+```
+$ hexo server
+```
+##### Create a new post
+```
+$ hexo new "Hello Hexo"
+```
+##### Generate static files
+```
+$ hexo generate
+```
+[More info](https://github.com/hexojs/hexo)
+### hexo deply报错
+hexo 更新到3.0之后，deploy的type 的github需要改成git，并在deploy前执行命令：
+```
+$ npm install hexo-deployer-git --save
+```
+### hexo server 端口被占用
+执行更换端口的命令：
+```
+hexo s -p 5000 (-p 后接端口）
+```
+## 结束语
+如果是初次搭建，一路上会有很多坑，希望你能坚持下来，完成你的个人博客搭建，开启你的博客之旅！
+
